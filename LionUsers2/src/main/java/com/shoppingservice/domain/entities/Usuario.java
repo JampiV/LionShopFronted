@@ -31,6 +31,10 @@ public class Usuario {
     @Column(name = "correo_usuario", nullable = false, unique = true)
     private String correoUsuario;
 
+    @Size(max = 100, message = "Especifique bien su direccion")
+    @Column(name = "direccion_usuario", length = 100)
+    private String direccionUsuario;
+
     @ManyToOne
     @JoinColumn(name = "id_rol", nullable = false,
             foreignKey = @ForeignKey(name = "FK_id_rol"))
@@ -84,9 +88,6 @@ public class Usuario {
         this.rol = rol;
     }
 
-    @Size(max = 100, message = "Especifique bien su direccion")
-    @Column(name = "direccion_usuario", length = 100)
-    private String direccionUsuario;
 
 
 }

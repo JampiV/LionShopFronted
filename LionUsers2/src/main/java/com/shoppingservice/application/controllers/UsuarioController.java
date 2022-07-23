@@ -42,11 +42,17 @@ public class UsuarioController {
         }
         return new WrapperResponse<>(true,"success", userObj).createResponse();}
 
+    /*
     @GetMapping
     public ResponseEntity<WrapperResponse<List<Usuario>>> listarUsuario(){
         List<Usuario> usuarios = usuarioService.listarUsuario();
         return new WrapperResponse<>(true, "success", usuarios).createResponse();
-    }
+    }*/
+
+    @GetMapping
+    public List<Usuario> listarUsuario(){
+        List<Usuario> usuarios = usuarioService.listarUsuario();
+        return usuarios;}
 
     @GetMapping("/{idUsuario}")
     public ResponseEntity<WrapperResponse<Usuario>> obtenerUsuarioPorIdUsuario(@PathVariable("idUsuario") Integer idUsuario) {
