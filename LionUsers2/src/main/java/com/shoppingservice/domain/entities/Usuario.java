@@ -76,6 +76,14 @@ public class Usuario {
         this.direccionUsuario = direccionUsuario;
     }
 
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
     @Size(max = 100, message = "Especifique bien su direccion")
     @Column(name = "direccion_usuario", length = 100)
     private String direccionUsuario;
